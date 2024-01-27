@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">myCodeCoverage</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.mycodecoverage</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.mycodecoverage;
+
+/**
+ *
+ * @author Iryna
+ */
+public class Student {
+    private int id;
+    private String name;
+    private StudentType type;
+    private int math;
+    private int sci;
+    private int eng;
+
+    @Override
+    public String toString() {
+<span class="nc" id="L21">        return &quot;Student{&quot; + &quot;id=&quot; + id + &quot;, name=&quot; + name + &quot;, type=&quot; + type + &quot;, math=&quot; + math + &quot;, sci=&quot; + sci + &quot;, eng=&quot; + eng + '}';</span>
+    }
+
+    
+    public int getId() {
+<span class="nc" id="L26">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L30">        this.id = id;</span>
+<span class="nc" id="L31">    }</span>
+
+    public String getName() {
+<span class="nc" id="L34">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L38">        this.name = name;</span>
+<span class="nc" id="L39">    }</span>
+
+    public StudentType getType() {
+<span class="nc" id="L42">        return type;</span>
+    }
+
+    public void setType(StudentType type) {
+<span class="nc" id="L46">        this.type = type;</span>
+<span class="nc" id="L47">    }</span>
+
+    public int getMath() {
+<span class="nc" id="L50">        return math;</span>
+    }
+
+    public void setMath(int math) {
+<span class="fc" id="L54">        this.math = math;</span>
+<span class="fc" id="L55">    }</span>
+
+    public int getSci() {
+<span class="nc" id="L58">        return sci;</span>
+    }
+
+    public void setSci(int sci) {
+<span class="fc" id="L62">        this.sci = sci;</span>
+<span class="fc" id="L63">    }</span>
+
+    public int getEng() {
+<span class="nc" id="L66">        return eng;</span>
+    }
+
+    public void setEng(int eng) {
+<span class="fc" id="L70">        this.eng = eng;</span>
+<span class="fc" id="L71">    }</span>
+
+    
+    //Empty constructor 
+<span class="fc" id="L75">    public Student() {</span>
+<span class="fc" id="L76">    }</span>
+
+    
+    //Custom constructor 
+<span class="nc" id="L80">    public Student(int id, String name, StudentType type, int math, int sci, int eng) {</span>
+<span class="nc" id="L81">        this.id = id;</span>
+<span class="nc" id="L82">        this.name = name;</span>
+<span class="nc" id="L83">        this.type = type;</span>
+<span class="nc" id="L84">        this.math = math;</span>
+<span class="nc" id="L85">        this.sci = sci;</span>
+<span class="nc" id="L86">        this.eng = eng;</span>
+<span class="nc" id="L87">    }</span>
+    
+    public String getGrade() {
+<span class="fc" id="L90">        int total = this.math + this.sci + this.eng;</span>
+<span class="fc" id="L91">        float avg = total /3.0f;</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (avg &lt;60) {</span>
+<span class="fc" id="L93">            return &quot;Fail&quot;;</span>
+        } else {
+<span class="fc" id="L95">            return &quot;Pass&quot;;</span>
+        }
+    }
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

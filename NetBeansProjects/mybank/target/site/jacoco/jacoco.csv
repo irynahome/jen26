@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+mybank,com.mycompany.mybank,Mybank,7,0,0,0,3,0,2,0,2,0
+mybank,com.mycompany.mybank,Account,23,18,0,0,8,7,5,3,5,3
+mybank,com.mycompany.mybank,Bank,43,0,0,0,15,0,8,0,8,0
+mybank,com.mycompany.mybank,Customer,31,24,0,0,10,9,7,3,7,3

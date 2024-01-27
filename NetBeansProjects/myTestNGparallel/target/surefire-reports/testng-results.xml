@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-01-06T17:32:21Z" name="FirstTest" finished-at="2024-01-06T17:32:24Z" duration-ms="3160">
+    <groups>
+    </groups>
+    <test started-at="2024-01-06T17:32:21Z" name="Command line test" finished-at="2024-01-06T17:32:24Z" duration-ms="3160">
+      <class name="FirstTest">
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:FirstTest@5bb21b69]" started-at="2024-01-06T11:32:21Z" name="setUpMethod" finished-at="2024-01-06T11:32:21Z" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="testITExpert()[pri:0, instance:FirstTest@5bb21b69]" started-at="2024-01-06T11:32:21Z" name="testITExpert" finished-at="2024-01-06T11:32:22Z" duration-ms="1708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testITExpert -->
+        <test-method is-config="true" signature="close()[pri:0, instance:FirstTest@5bb21b69]" started-at="2024-01-06T11:32:22Z" name="close" finished-at="2024-01-06T11:32:22Z" duration-ms="120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method signature="testInfoTekguide()[pri:0, instance:FirstTest@5bb21b69]" started-at="2024-01-06T11:32:22Z" name="testInfoTekguide" finished-at="2024-01-06T11:32:24Z" duration-ms="1211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInfoTekguide -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:FirstTest@5bb21b69]" started-at="2024-01-06T11:32:22Z" name="setUpMethod" finished-at="2024-01-06T11:32:22Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method is-config="true" signature="close()[pri:0, instance:FirstTest@5bb21b69]" started-at="2024-01-06T11:32:24Z" name="close" finished-at="2024-01-06T11:32:24Z" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- FirstTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- FirstTest -->
+</testng-results>

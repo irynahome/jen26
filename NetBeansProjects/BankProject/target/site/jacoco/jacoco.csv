@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+BankProject,com.mycompany.bankproject,Account,26,27,0,0,9,10,5,5,5,5
+BankProject,com.mycompany.bankproject,AccountType,0,21,0,0,0,2,0,1,0,1
+BankProject,com.mycompany.bankproject,CustomerType,0,15,0,0,0,2,0,1,0,1
+BankProject,com.mycompany.bankproject,Customer,34,46,0,0,15,14,5,8,5,8
+BankProject,com.mycompany.bankproject,Bank,20,45,0,0,10,13,5,7,5,7
+BankProject,com.mycompany.bankproject,BankProject,532,0,38,0,138,0,27,0,4,0
+BankProject,com.mycompany.bankproject,Employee,16,37,0,0,8,11,4,6,4,6
+BankProject,com.mycompany.bankproject,FullTiimeEmployee,10,13,0,0,3,4,2,2,2,2
+BankProject,com.mycompany.bankproject,ContractorEmployee,10,13,0,0,3,4,2,2,2,2

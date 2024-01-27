@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-08T22:42:51Z" name="test.bankproject.iryna.BankTest" finished-at="2023-12-08T22:42:51Z" duration-ms="35">
+    <groups>
+    </groups>
+    <test started-at="2023-12-08T22:42:51Z" name="Command line test" finished-at="2023-12-08T22:42:51Z" duration-ms="35">
+      <class name="test.bankproject.iryna.BankTest">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:test.bankproject.iryna.BankTest@52feb982]" started-at="2023-12-08T16:42:51Z" name="setUpClass" finished-at="2023-12-08T16:42:51Z" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="testBank()[pri:0, instance:test.bankproject.iryna.BankTest@52feb982]" started-at="2023-12-08T16:42:51Z" name="testBank" finished-at="2023-12-08T16:42:51Z" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBank -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:test.bankproject.iryna.BankTest@52feb982]" started-at="2023-12-08T16:42:51Z" name="setUpMethod" finished-at="2023-12-08T16:42:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:test.bankproject.iryna.BankTest@52feb982]" started-at="2023-12-08T16:42:51Z" name="tearDownMethod" finished-at="2023-12-08T16:42:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test.bankproject.iryna.BankTest@52feb982]" started-at="2023-12-08T16:42:51Z" name="tearDownClass" finished-at="2023-12-08T16:42:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- test.bankproject.iryna.BankTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- test.bankproject.iryna.BankTest -->
+</testng-results>

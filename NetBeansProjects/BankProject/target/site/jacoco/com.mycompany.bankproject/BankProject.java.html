@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BankProject.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BankProject</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.bankproject</a> &gt; <span class="el_source">BankProject.java</span></div><h1>BankProject.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.bankproject;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Iryna
+ */
+<span class="nc" id="L19">public class BankProject {</span>
+
+    public static void main(String[] args) {
+        
+        String choice;
+        
+<span class="nc" id="L25">        Random rand = new Random();</span>
+        int rand_int;
+<span class="nc" id="L27">        int low = 1000;</span>
+<span class="nc" id="L28">        int high = 9000;</span>
+        int result;
+        
+<span class="nc" id="L31">        Scanner sc = new Scanner(System.in);</span>
+        //empty employee list
+<span class="nc" id="L33">        ArrayList&lt;Employee&gt; employees = new ArrayList&lt;Employee&gt;();</span>
+<span class="nc" id="L34">        ArrayList&lt;Customer&gt; customers = new ArrayList&lt;Customer&gt;();</span>
+        //create a bank with empty employee list
+<span class="nc" id="L36">        Bank bank = new Bank(1, &quot;Iryna World Bank&quot;, &quot;888-555-7777&quot;, employees, customers);</span>
+        
+<span class="nc" id="L38">        Date date = new Date();</span>
+<span class="nc" id="L39">        SimpleDateFormat dateFormatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L40">        String strDate = dateFormatter.format(date);</span>
+<span class="nc" id="L41">        System.out.println(&quot;Current date: &quot;+strDate);</span>
+<span class="nc" id="L42">        choice = &quot;&quot;;</span>
+        do{
+<span class="nc" id="L44">            menu();</span>
+<span class="nc" id="L45">            choice = sc.next().toUpperCase();  </span>
+            
+<span class="nc bnc" id="L47" title="All 8 branches missed.">            switch (choice){</span>
+                case &quot;1&quot;:  
+<span class="nc" id="L49">                    System.out.println(&quot;== Add employee==&quot;);                    </span>
+<span class="nc" id="L50">                    System.out.println(&quot;Enter id&quot;);</span>
+<span class="nc" id="L51">                    int id = sc.nextInt();</span>
+<span class="nc" id="L52">                    System.out.println(&quot;Enter name&quot;);</span>
+<span class="nc" id="L53">                    String name = sc.next();</span>
+<span class="nc" id="L54">                    System.out.println(&quot;Enter title&quot;);</span>
+<span class="nc" id="L55">                    String title = sc.next();</span>
+<span class="nc" id="L56">                    System.out.println(&quot;Enter email&quot;);</span>
+<span class="nc" id="L57">                    String email = sc.next();</span>
+<span class="nc" id="L58">                    System.out.println(&quot;Enter Employee type:: f-&gt;for fulltime or c-&gt; for Contractor&quot;);</span>
+<span class="nc" id="L59">                    String type = sc.next();</span>
+                    
+<span class="nc" id="L61">                    Employee emp1 = null;</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                    if (type.equalsIgnoreCase(&quot;f&quot;)) {</span>
+                        //create employee instance with data
+<span class="nc" id="L64">                        System.out.println(&quot;Enter salary&quot;);</span>
+<span class="nc" id="L65">                        float salary = sc.nextFloat();</span>
+<span class="nc" id="L66">                        emp1 = new FullTiimeEmployee(salary, id, name,title, email);</span>
+<span class="nc" id="L67">                    } else {</span>
+<span class="nc" id="L68">                        System.out.println(&quot;Enter hourly rate&quot;);</span>
+<span class="nc" id="L69">                        float hourlyrate = sc.nextFloat();</span>
+<span class="nc" id="L70">                        emp1 = new ContractorEmployee(hourlyrate, id, name, title, email);</span>
+                    }
+                    
+                    //add employee in a bank
+<span class="nc" id="L74">                    bank.getEmployees().add(emp1);</span>
+<span class="nc" id="L75">                    System.out.println(bank);</span>
+
+                     
+<span class="nc" id="L78">                    break;</span>
+                case &quot;2&quot;:
+<span class="nc" id="L80">                    System.out.println(&quot;== Search employee by id == &quot;);</span>
+<span class="nc" id="L81">                    System.out.println(&quot;Enter employee id &quot;);</span>
+<span class="nc" id="L82">                    int eid = sc.nextInt();</span>
+<span class="nc" id="L83">                    boolean found = false;</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">                    for (Employee e : bank.getEmployees()) {</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">                        if (e.getId() == eid) {</span>
+<span class="nc" id="L86">                            System.out.println(&quot;Employee was found! &quot; + e);</span>
+<span class="nc" id="L87">                            found = true;</span>
+                                    
+<span class="nc" id="L89">                            break;</span>
+                        }
+<span class="nc" id="L91">                    }</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">                     if (found == false) {</span>
+<span class="nc" id="L93">                        System.out.println(&quot;For this id - Employee does not exit&quot;);</span>
+                    }
+                     
+                    break;
+                case &quot;3&quot;:
+<span class="nc" id="L98">                    ArrayList&lt;Account&gt; accounts = new ArrayList&lt;Account&gt;();</span>
+<span class="nc" id="L99">                    System.out.println(&quot;== Add Customer and Account ==&quot;);                    </span>
+<span class="nc" id="L100">                    System.out.println(&quot;Enter customer id: &quot;);</span>
+<span class="nc" id="L101">                    int cid = sc.nextInt();</span>
+<span class="nc" id="L102">                    System.out.println(&quot;Enter customer name: &quot;);</span>
+<span class="nc" id="L103">                    String cname = sc.next();</span>
+<span class="nc" id="L104">                    System.out.println(&quot;Enter customer emeil: &quot;);</span>
+<span class="nc" id="L105">                    String cemail = sc.next();</span>
+<span class="nc" id="L106">                    System.out.println(&quot;Enter Customer type:: i-&gt;for Individual or b-&gt; for Business&quot;);</span>
+<span class="nc" id="L107">                    String ctype = sc.next();</span>
+<span class="nc" id="L108">                    rand_int = rand.nextInt(1000);</span>
+<span class="nc" id="L109">                    int acct_num = rand.nextInt(high-low) + low;</span>
+                    
+<span class="nc" id="L111">                    System.out.println(&quot;Inter your start ballance $: &quot;);</span>
+<span class="nc" id="L112">                    double blnc = sc.nextDouble();</span>
+                    
+                    //CHECKING, SAVING, FIXED_DEPOSIT
+<span class="nc" id="L115">                    System.out.println(&quot;Enter Accont Type you would like to open:: c--&gt;for CHECKING, s--&gt;SAVING, f--&gt;for FIXED_DEPOSIT&quot;);</span>
+<span class="nc" id="L116">                    String tmpAcctType = sc.next();</span>
+<span class="nc" id="L117">                    Customer cust = null;</span>
+<span class="nc" id="L118">                    Account acct = null;                    </span>
+                    //acct = new Account(acct_num,cid, blnc,returnAcctType(tmpAcctType));                   
+<span class="nc bnc" id="L120" title="All 2 branches missed.">                    if (ctype.equalsIgnoreCase(&quot;i&quot;)) {</span>
+                        //create customer instance with data
+<span class="nc" id="L122">                        System.out.println(&quot;log === i&quot;);</span>
+                        
+<span class="nc" id="L124">                        cust = new Customer(cid, cname, cemail, CustomerType.INDIVIDUAL, accounts); </span>
+<span class="nc" id="L125">                        acct = new Account(acct_num,cid, blnc,returnAcctType(tmpAcctType));  </span>
+                      
+<span class="nc" id="L127">                        System.out.println(&quot;log === &quot; + cust);</span>
+                        
+                    } else {
+<span class="nc" id="L130">                        System.out.println(&quot;log === b&quot;);</span>
+<span class="nc" id="L131">                        cust = new Customer(cid, cname, cemail, CustomerType.BUSINESS,  accounts);   </span>
+<span class="nc" id="L132">                        acct = new Account(acct_num,cid, blnc,returnAcctType(tmpAcctType));</span>
+                        //cust.getAcct().add(acct);
+                    } 
+                    
+<span class="nc" id="L136">                    cust.getAcct().add(acct);</span>
+                                        
+<span class="nc" id="L138">                    bank.getCustomers().add(cust);</span>
+<span class="nc" id="L139">                    System.out.println(bank);</span>
+                    
+                    
+                    //bank.getCustomers().add(cust);
+                    //cust.getAcct().add(acct);              
+                
+
+                    
+                case &quot;S&quot;:  
+<span class="nc" id="L148">                    String mypath = &quot;C:\\ITExportsSchool\\JavaSelenium\\BankData.txt&quot;;</span>
+<span class="nc" id="L149">                    System.out.println(&quot;===Save Data to text File (&quot; + mypath+ &quot;)===&quot;);</span>
+                    
+                    try{
+                        //FileWriter fw = new FileWriter(mypath, true);
+                        //System.out.println(&quot;log 1&quot;);
+<span class="nc" id="L154">                        FileWriter fw = new FileWriter(mypath);</span>
+                        //System.out.println(&quot;log 2&quot;);
+<span class="nc" id="L156">                        BufferedWriter bw = new BufferedWriter(fw);</span>
+                        //System.out.println(&quot;log 3&quot;);
+<span class="nc" id="L158">                        bw.write (&quot;=========== Bank &quot; + strDate + &quot; ============\n&quot;);</span>
+<span class="nc" id="L159">                        bw.write(bank.getId() + &quot;|&quot; + bank.getName() + &quot;|&quot; + bank.getPhone() + &quot;\n&quot;);</span>
+<span class="nc" id="L160">                        bw.write(&quot;========Employees========\n&quot;);</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">                        for (Employee e : bank.getEmployees()){</span>
+<span class="nc" id="L162">                            bw.write(e.getId()+ &quot;|&quot; + e.getName() + &quot;|&quot; + e.getTitle() + &quot;|&quot; + &quot;\n&quot;);</span>
+                            //e.toString()
+<span class="nc bnc" id="L164" title="All 2 branches missed.">                            if (e instanceof  FullTiimeEmployee){</span>
+<span class="nc" id="L165">                                bw.write(((FullTiimeEmployee) e).getSalary() + &quot;\n&quot;);</span>
+                            }else {
+<span class="nc" id="L167">                                bw.write(((ContractorEmployee) e).getHourlyRate() + &quot;\n&quot;);</span>
+                            }
+<span class="nc" id="L169">                        }                        </span>
+                        //TODO For Customer                        
+<span class="nc" id="L171">                        bw.write(&quot;========Customers========\n&quot;);</span>
+                        //for each customer from bank
+<span class="nc bnc" id="L173" title="All 2 branches missed.">                        for (Customer c : bank.getCustomers()){</span>
+<span class="nc" id="L174">                            bw.write(c.getId() + &quot;|&quot; + c.getName() + &quot;|&quot; + c.getEmail() + &quot;|&quot; + c.getCustType() + &quot;\n&quot;);   </span>
+<span class="nc" id="L175">                            bw.write(&quot;-----Customer Accounts----\n&quot;  );</span>
+                            //Each Customer has account
+<span class="nc bnc" id="L177" title="All 2 branches missed.">                            for(Account a : c.getAcct()){</span>
+<span class="nc" id="L178">                                bw.write(a.getCust_id() + &quot;|&quot; + a.getAcctNum() + &quot;|&quot; + a.getAcctType() + &quot;|&quot; + a.getBalance()+ &quot;\n&quot;);</span>
+<span class="nc" id="L179">                            }</span>
+<span class="nc" id="L180">                        }</span>
+                        
+                        
+                        
+<span class="nc" id="L184">                        bw.close();</span>
+<span class="nc" id="L185">                        fw.close();</span>
+                      
+<span class="nc" id="L187">                    }catch(Exception e){</span>
+<span class="nc" id="L188">                        System.out.println(&quot;Error when save to File Employee info. Error msg: &quot;+ e.getMessage());</span>
+<span class="nc" id="L189">                    }</span>
+                    
+                    
+                    
+<span class="nc" id="L193">                    break;</span>
+                case &quot;4&quot;:
+<span class="nc" id="L195">                    System.out.println(&quot;=======Search Customers by ID==========&quot;);</span>
+<span class="nc" id="L196">                    System.out.println(&quot;Enter employee id &quot;);</span>
+<span class="nc" id="L197">                    int custid = sc.nextInt();</span>
+<span class="nc" id="L198">                    boolean found1 = false;</span>
+                    
+<span class="nc bnc" id="L200" title="All 2 branches missed.">                    for (Customer c : bank.getCustomers()) {</span>
+<span class="nc bnc" id="L201" title="All 2 branches missed.">                        if (c.getId() == custid) {</span>
+<span class="nc" id="L202">                            System.out.println(&quot;Customer was found! &quot; + c);</span>
+<span class="nc" id="L203">                            found1 = true;</span>
+                                    
+<span class="nc" id="L205">                            break;</span>
+                        }
+<span class="nc" id="L207">                    }</span>
+<span class="nc bnc" id="L208" title="All 2 branches missed.">                     if (found1 == false) {</span>
+<span class="nc" id="L209">                        System.out.println(&quot;For this id - Customer does not exit&quot;);</span>
+                    }
+                    
+                    
+                    break;
+                case &quot;5&quot;:
+<span class="nc" id="L215">                    System.out.println(&quot;your coice 5&quot;);</span>
+                    
+<span class="nc" id="L217">                    break;</span>
+                case &quot;6&quot;:
+<span class="nc" id="L219">                    System.out.println(&quot;your coice 6&quot;);                    </span>
+                    
+<span class="nc" id="L221">                    break;</span>
+                case &quot;Q&quot;:    
+                    break;
+                    
+            }
+           //!&quot;success&quot;.equals(statusCheck) 
+<span class="nc bnc" id="L227" title="All 2 branches missed.">        }while (!choice.equals(&quot;Q&quot;) );</span>
+        
+<span class="nc" id="L229">    }</span>
+    
+    
+    public static AccountType returnAcctType(String mytype){
+        //CHECKING, SAVING, FIXED_DEPOSIT
+        
+<span class="nc bnc" id="L235" title="All 4 branches missed.">        switch (mytype.toLowerCase()){</span>
+            case &quot;c&quot;:
+<span class="nc" id="L237">                return AccountType.CHECKING;</span>
+            case &quot;s&quot;:
+<span class="nc" id="L239">                return AccountType.SAVING;</span>
+            case &quot;f&quot;:
+<span class="nc" id="L241">                return AccountType.FIXED_DEPOSIT;</span>
+                
+        }
+        
+<span class="nc" id="L245">        return AccountType.CHECKING;</span>
+    }
+    
+    public static void menu() {
+<span class="nc" id="L249">        System.out.println(&quot;1 for Add Employee&quot;);</span>
+<span class="nc" id="L250">        System.out.println(&quot;2 for Search Employee&quot;);</span>
+        
+        
+<span class="nc" id="L253">        System.out.println(&quot;3 for Add Customer&quot;);</span>
+<span class="nc" id="L254">        System.out.println(&quot;4 for Search Customer&quot;);</span>
+        
+<span class="nc" id="L256">        System.out.println(&quot;S for Save Data to text File&quot;);</span>
+
+<span class="nc" id="L258">        System.out.println(&quot;Q for Quit&quot;);</span>
+<span class="nc" id="L259">        System.out.println(&quot;Enter your choice  &quot;);</span>
+<span class="nc" id="L260">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

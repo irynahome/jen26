@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Command line suite]" verbose="0">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="my.test.proj.MYSeleniumProj1Test">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setUpMethod"/>
+          <include name="tearDownClass"/>
+          <include name="testFacebook"/>
+          <include name="tearDownMethod"/>
+        </methods>
+      </class> <!-- my.test.proj.MYSeleniumProj1Test -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->
